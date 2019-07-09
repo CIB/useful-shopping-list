@@ -1,6 +1,12 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <!-- Accent-colored raised button with ripple -->
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+      Button
+    </button>
+    <md-button class="md-raised md-primary">Button</md-button>
+
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -33,8 +39,13 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import ShoppingList from './ShoppingList.vue';
 
-@Component
+@Component({
+  components: {
+    ShoppingList,
+  },
+})
 export default class HelloWorld extends Vue {
   @Prop() private msg!: string;
 }
